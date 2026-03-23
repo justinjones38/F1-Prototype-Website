@@ -1,0 +1,21 @@
+/* -----------
+NAVBAR 
+-------------- */
+.navbar {
+    background-color: var(--button-nav-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+
+.hamburger-menu {
+    font-size: 1.3rem;
+}
+
+.nav-items {
+    position: absolute;
+    top: 100%;
+}
+
+
