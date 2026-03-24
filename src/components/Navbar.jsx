@@ -38,7 +38,9 @@ export default function Navbar({ windowWidth }) {
 
     return (
         <nav className="navbar">
-            <h1 className="nav-title"><a href="#home">F1 Pit Wall</a></h1>
+            <h1 className="nav-title">
+                <a href="#home" className="nav-title-link">F1 Pit Wall</a>
+            </h1>
             <button className="hamburger-menu" onClick={() => setHamburgerMenu(true)}><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
             <div className={hamburgerMenu && windowWidth < 600 ? "nav-menu show" : "nav-menu"}>
                 <button className="close-button" onClick={() => setHamburgerMenu(false)}><FontAwesomeIcon icon="fa-solid fa-x" /></button>
