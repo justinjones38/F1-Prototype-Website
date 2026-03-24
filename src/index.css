@@ -1,25 +1,5 @@
 /* =========================================
 CSS RESET
-============================================*/
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-
-/* =========================================
-CSS VARIABLES
-============================================*/
-:root {
-  --bg-color: #f2f2f0;
-  --text-primary-color: #000000;
-  --button-nav-color: #DC0000;
-  --button-nav-text-color: #ffffff
-  --secondary-text-color: rgba(0, 0, 0, 80%);
-  
-}
-
 
 /* =========================================
 BASE STYLES
@@ -62,5 +42,3 @@ h1 {
 h2 {
   font-size: 1.1rem;
 }
-
-/*  */

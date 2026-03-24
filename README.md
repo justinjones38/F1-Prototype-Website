@@ -1,16 +1,72 @@
-# React + Vite
+## Formula 1 2026 Calendar — React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive React application that displays the complete **2026 Formula 1 race schedule**, including dates, locations, and Grand Prix names.
 
-Currently, two official plugins are available:
+## Video Demo
+<img src="src/assets/Formula-1_Calendar.gif" alt="Video Demo" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project provides a clean UI for browsing the **2026 F1 season calendar**.
+It is designed to be lightweight, responsive, and easy to extend (e.g., adding race details, track maps, session times, or results).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+* Full **2026 Formula 1 season schedule**
+* Race-by-race location list
+* Responsive React UI
+* Fast and simple setup
+* Easy to customize or integrate into a larger F1 stats app
+
+---
+
+##  Tech Stack
+
+* React (Vite)
+* CSS
+
+---
+
+## Installation
+
+```bash
+# Clone the project
+git clone https://github.com/your-username/F1-Calendar-List.git
+
+# Enter the project directory
+cd F1-Calendar-List
+
+# Install dependencies
+npm install
+```
+
+---
+
+## Running the App
+
+```bash
+npm run dev   # For Vite
+```
+
+Open your browser at:
+**[http://localhost:3000](http://localhost:3000)**
+(or the port Vite assigns)
+
+---
+
+
+## 📚 Future Enhancements
+
+* Add session times (FP1, FP2, Qualifying, etc.)
+* Add driver/team information
+* Add dark mode
+* Add results once season starts
+
+---
+
+## 🙌 Acknowledgments
+
+* Formula 1 © — official race schedule
