@@ -16,12 +16,12 @@ NAVBAR
     margin: 0.5em 0.2em;
 }
 
-.nav-title {
+.nav-title-link {
     transition: 0.3s opacity;
 }
 
-.nav-title:focus,
-.nav-title:hover {
+.nav-title-link:focus,
+.nav-title-link:hover {
     opacity: 0.7;
     cursor: pointer;
 }
@@ -51,20 +51,15 @@ NAVBAR
 }
 
 .nav-items {
-    margin-top: 2em;
     display: flex;
     flex-direction: column;
-    gap: 3em;
     align-items: center;
-}
-
-.nav-item {
-    font-size: 1.5rem;
-
+    margin-top: 2em;
+    gap: 3em;
 }
 
 .nav-link {
-    text-decoration: none;
+    font-size: 1.5rem;
     color: var(--button-nav-text-color);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -79,7 +74,7 @@ NAVBAR
 @media (min-width: 600px) {
     .navbar {
         align-items: center;
-        padding: 0.5em 0.5em;
+        padding: 0.5em;
     }
 
     .nav-title {
@@ -99,11 +94,9 @@ NAVBAR
     }
 
     .nav-items {
-        margin-left: auto;
         flex-direction: row;
         justify-content: space-between;
-        align-self: center;
-        margin-top: 0;
+        margin: 0 0 0 auto;
         gap: 1em;
     }
 
