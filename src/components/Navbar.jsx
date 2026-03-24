@@ -12,21 +12,43 @@ library.add(fas, far, fab)
 
 
 export default function Navbar() {
+    // Setting state to track whether hamburger menu is open or closed 
     const [hamburgerMenu, setHamburgerMenu] = useState(false);
+
+    // Array of navItems 
+    const navItems = [{
+        id: 0,
+        name: "Schedule",
+        link: "#schedule"
+    }, {
+        id: 1,
+        name: "Standings",
+        link: "#standings"
+    }, {
+        id: 2,
+        name: "Drivers",
+        link: "#drivers"
+    }, {
+        id: 3,
+        name: "Teams",
+        link: "#teams"
+    }]
 
     return (
         <nav className="navbar">
             <h1 className="nav-title">F1 Pit Wall</h1>
-            <button className="hamburger-menu"><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
+            <button className="hamburger-menu" onClick={() => setHamburgerMenu(true)}><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
+ 
+            
+            <div className={hamburgerMenu ? "nav-menu show" : "nav-menu"}>
+                <button className="close-button" onClick={() => setHamburgerMenu(false)}><FontAwesomeIcon icon="fa-solid fa-x" /></button>
+                <ul className="nav-items">
+                    {navItems.map(navItem => (
+                        <li className="nav-item" key={navItem.id}><a href={navItem.link} className="nav-link">{navItem.name}</a></li>
+                    ))}
+                </ul>
+            </div>
 
-        
-            <ul className="nav-items">
-                <li className="nav-item"><a href="#home" className="nav-link">Home</a></li>
-                <li className="nav-item"><a href="#schedule" className="nav-link">Schedule</a></li>
-                <li className="nav-item"><a href="#standings" className="nav-link">Standings</a></li>
-                <li className="nav-item"><a href="#drivers" className="nav-link">Drivers</a></li>
-                <li className="nav-item"><a href="#teams" className="nav-link">Teams</a></li>
-            </ul>
         </nav>
     )
 }

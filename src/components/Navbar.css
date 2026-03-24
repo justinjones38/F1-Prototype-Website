@@ -6,16 +6,54 @@ NAVBAR
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 0.5em;
+    position: fixed;
+    width: 100%;
+}
+
+.nav-title,
+.hamburger-menu,
+.close-button {
+    margin: 0.5em 0.2em;
 }
 
 .hamburger-menu {
     font-size: 1.3rem;
 }
 
-.nav-items {
+.nav-menu {
+    top: -100vh;
     position: absolute;
-    top: 100%;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 100;
+    background-color: var(--button-nav-color);
+    opacity: 97%;
+    transition: 0.3s transform;
 }
 
+.nav-menu.show {
+    transform: translateY(100vh);
+}
 
+.close-button {
+    font-size: 1.5rem;
+    margin-left: auto; 
+}
+
+.nav-items {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    align-items: center;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--button-nav-text-color);
+}
