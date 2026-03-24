@@ -58,6 +58,7 @@ NAVBAR
     color: var(--button-nav-text-color);
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: 0.3s border-bottom;
 }
 
 .nav-link:hover {

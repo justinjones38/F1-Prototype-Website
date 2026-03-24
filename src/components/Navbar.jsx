@@ -11,7 +11,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, far, fab)
 
 
-export default function Navbar() {
+export default function Navbar({ windowWidth }) {
     // Setting state to track whether hamburger menu is open or closed 
     const [hamburgerMenu, setHamburgerMenu] = useState(false);
 
@@ -34,13 +34,13 @@ export default function Navbar() {
         link: "#teams"
     }]
 
+
+
     return (
         <nav className="navbar">
             <h1 className="nav-title">F1 Pit Wall</h1>
             <button className="hamburger-menu" onClick={() => setHamburgerMenu(true)}><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
- 
-            
-            <div className={hamburgerMenu ? "nav-menu show" : "nav-menu"}>
+            <div className={hamburgerMenu && windowWidth < 600 ? "nav-menu show" : "nav-menu"}>
                 <button className="close-button" onClick={() => setHamburgerMenu(false)}><FontAwesomeIcon icon="fa-solid fa-x" /></button>
                 <ul className="nav-items">
                     {navItems.map(navItem => (
