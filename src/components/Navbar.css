@@ -16,6 +16,16 @@ NAVBAR
     margin: 0.5em 0.2em;
 }
 
+.nav-title {
+    transition: 0.3s opacity;
+}
+
+.nav-title:focus,
+.nav-title:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 .hamburger-menu {
     font-size: 1.3rem;
 }
@@ -61,7 +71,8 @@ NAVBAR
     transition: 0.3s border-bottom;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
     border-bottom: 4px solid white;
 }
 
