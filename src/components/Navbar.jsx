@@ -42,7 +42,7 @@ export default function Navbar({ windowWidth }) {
                 <a href="#home" className="nav-title-link">F1 Pit Wall</a>
             </h1>
             <button className="hamburger-menu" onClick={() => setHamburgerMenu(true)}><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
-            <div className={hamburgerMenu && windowWidth < 600 ? "nav-menu show" : "nav-menu"}>
+            <div className={hamburgerMenu && windowWidth < 600 ? "nav-menu show" : "nav-menu"} onClick={() => setHamburgerMenu(false)}>
                 <button className="close-button" onClick={() => setHamburgerMenu(false)}><FontAwesomeIcon icon="fa-solid fa-x" /></button>
                 <ul className="nav-items">
                     {navItems.map(navItem => (

@@ -6,10 +6,9 @@ import './App.css'
 export default function App() {
   // Gets the width of the screensize
   const [windowWidth, setWindowWith] = useState(window.innerWidth);
-
   const [eventList, setEventList] = useState([]);
 
-    // Code to get the windowWidth in px
+    // Getting the windowWidth in px
     useEffect(() => {
         const handleResize = () => {
             setWindowWith(window.innerWidth);
