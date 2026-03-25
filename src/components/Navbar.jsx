@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -11,9 +11,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, far, fab)
 
 
-export default function Navbar({ windowWidth }) {
+export default function Navbar() {
     // Setting state to track whether hamburger menu is open or closed 
     const [hamburgerMenu, setHamburgerMenu] = useState(false);
+    const [windowWidth, setWindowWith] = useState(window.innerWidth);
+
 
     // Array of navItems 
     const navItems = [{
@@ -33,6 +35,17 @@ export default function Navbar({ windowWidth }) {
         name: "Teams",
         link: "#teams"
     }]
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWith(window.innerWidth);
+        }
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
+    }, [])
+
 
 
 
