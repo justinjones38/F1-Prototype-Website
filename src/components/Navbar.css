@@ -31,18 +31,19 @@ NAVBAR
 }
 
 .nav-menu {
-    top: -100vh;
+    top: 0;
     position: absolute;
     width: 100%;
     min-height: 100vh;
     z-index: 100;
     background-color: var(--button-nav-color);
     opacity: 97%;
+    transform: translateY(-100%);
     transition: 0.3s transform;
 }
 
 .nav-menu.show {
-    transform: translateY(100vh);
+    transform: translateY(0);
 }
 
 .close-button {
