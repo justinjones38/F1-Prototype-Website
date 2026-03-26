@@ -35,7 +35,7 @@ NAVBAR
     position: absolute;
     width: 100%;
     min-height: 100vh;
-    z-index: 100;
+    z-index: 1000;
     background-color: var(--button-nav-color);
     opacity: 97%;
     transform: translateY(-100%);
@@ -44,6 +44,7 @@ NAVBAR
 
 .nav-menu.show {
     transform: translateY(0);
+    z-index: 1000;
 }
 
 .close-button {

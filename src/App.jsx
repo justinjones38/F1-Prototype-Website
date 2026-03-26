@@ -20,7 +20,7 @@ export default function App() {
         const dataRes = await Promise.all([
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/races/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/driverstandings/?format=json`),
-          fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructors/?format=json`),
+          fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructorstandings/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/drivers/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructors/?format=json`)
         ])
@@ -39,7 +39,7 @@ export default function App() {
         setData({
           calendar: calendar.MRData.RaceTable,
           driverStandings: driverStandings.MRData.StandingsTable,
-          constructorStandings: constructorStandings.MRData.ConstructorTable,
+          constructorStandings: constructorStandings.MRData.StandingsTable,
           drivers: drivers.MRData.DriverTable,
           constructors: constructors.MRData.ConstructorTable
         })
@@ -59,7 +59,6 @@ export default function App() {
   if (error) {
     return;
   }
-  console.log(data);
 
   return (
     <div className='app'>
@@ -68,9 +67,9 @@ export default function App() {
       </header>
       <main>
         <HeroSection
-          calendar={data.calendar.MRData}
-          driverStandings={data.driverStandings.MRData}
-          constructorStandings
+          calendar={data.calendar}
+          driverStandings={data.driverStandings}
+          constructorStandings={data.constructorStandings}
         />
       </main>
 
