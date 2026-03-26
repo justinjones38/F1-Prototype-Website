@@ -49,6 +49,12 @@ NAVBAR
 .close-button {
     font-size: 1.5rem;
     margin-left: auto;
+    transition: opacity 0.3s;
+}
+
+.close-button:focus,
+.close-button:hover {
+    opacity: 70%;
 }
 
 .nav-items {
