@@ -30,13 +30,13 @@ export default function NextRaceCard({ event, convertDate, convertTime }) {
                 </div>
             </div>
             <div className="card-next-session-times">
-                <SessionCard title="FP1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} />
-                <SessionCard title="FP2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} />
-                <SessionCard title="Sprint Qualy" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} />
-                <SessionCard title="FP3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} />
-                <SessionCard title="FP3" info={event.Sprint} convertDate={convertDate} convertTime={convertTime} />
-                <SessionCard title="Qualifying" info={event.Qualifying} convertDate={convertDate} convertTime={convertTime} />
-                <SessionCard title="Race" info={event} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="FP1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="FP2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="Sprint Qualy" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="FP3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="Sprint" info={event.Sprint} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="Qualifying" info={event.Qualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={true} />
+                <SessionCard title="Race" info={event} convertDate={convertDate} convertTime={convertTime} isPrimary={true} />
             </div>
         </div>
     )
