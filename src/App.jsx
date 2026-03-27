@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 import './App.css'
-import HeroSection from './components/HeroSection';
+import HeroSection from './components/Layout/HeroSection';
 
 export default function App() {
   // Gets the width of the screensize
@@ -22,7 +22,8 @@ export default function App() {
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/driverstandings/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructorstandings/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/drivers/?format=json`),
-          fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructors/?format=json`)
+          fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructors/?format=json`),
+          fetch(`https://api.jolpi.ca/ergast/f1/${year}/results/?format=json`)
         ])
 
         dataRes.forEach(res => {
@@ -34,14 +35,15 @@ export default function App() {
         const fetchingData = await Promise.all(dataRes.map(res => res.json()));
 
       //  Getting the values from the fetchingData Array
-        const [calendar, driverStandings, constructorStandings, drivers, constructors] = fetchingData;
+        const [calendar, driverStandings, constructorStandings, drivers, constructors, results] = fetchingData;
 
         setData({
           calendar: calendar.MRData.RaceTable,
           driverStandings: driverStandings.MRData.StandingsTable,
           constructorStandings: constructorStandings.MRData.StandingsTable,
           drivers: drivers.MRData.DriverTable,
-          constructors: constructors.MRData.ConstructorTable
+          constructors: constructors.MRData.ConstructorTable,
+          results: results.MRData.RaceTable
         })
       } catch {
         setError(true);
@@ -50,6 +52,7 @@ export default function App() {
 
     fetchData()
   }, [])
+  console.log(data);
 
   if (!data || Object.keys(data).length === 0) {
     return;

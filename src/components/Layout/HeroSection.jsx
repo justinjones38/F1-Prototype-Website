@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./HeroSection.css"
-import Card from "./Card.jsx"
+import Card from "../Card/NextRaceCard.jsx"
 
 export default function HeroSection({ calendar, driverStandings, constructorStandings }) {
 
