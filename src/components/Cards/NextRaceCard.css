@@ -1,0 +1,54 @@
+.card-next-container {
+    border: 1px solid var(--button-nav-color);
+    padding: 0.25em 0.5em;
+    border-radius: 8px;
+}
+
+.card-next-race-info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(4, 4, 4, 0.137);
+    margin-bottom: 1em;
+}
+
+.card-next-alert {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--button-nav-color);
+    margin-bottom: 0;
+}
+
+.card-next-header {
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.card-next-description {
+    font-size: 0.8rem;
+}
+
+.card-next-countdown-container {
+    align-self: center;
+
+}
+
+.card-next-countdown {
+    font-size: 0.75rem;
+    
+}
+
+.card-next-countdown>span {
+    display: block;
+    text-align: right;
+    font-size: 1.5rem;
+    color: var(--button-nav-color);
+    line-height: 1;
+}
+
+.card-next-session-times {
+    display: grid;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    gap: 1em;
+}

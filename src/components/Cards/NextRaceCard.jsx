@@ -1,3 +1,4 @@
+import "./NextRaceCard.css"
 import SessionCard from "./SessionCard";
 
 export default function NextRaceCard({ event, convertDate, convertTime }) {
@@ -27,17 +28,15 @@ export default function NextRaceCard({ event, convertDate, convertTime }) {
                         <span>{getTimeDifference(event.date)}</span> days to go
                     </p>
                 </div>
-
-                <div className="card-next-session-times">
-                    <SessionCard title="FP1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} />
-                    <SessionCard title="FP2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} />
-                    <SessionCard title="Sprint Qualy" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} />
-                    <SessionCard title="FP3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} />
-                    <SessionCard title="FP3" info={event.Sprint} convertDate={convertDate} convertTime={convertTime} />
-                    <SessionCard title="Qualifying" info={event.Qualifying} convertDate={convertDate} convertTime={convertTime} />
-                    <SessionCard title="Race" info={event} convertDate={convertDate} convertTime={convertTime} />
-                </div>
-
+            </div>
+            <div className="card-next-session-times">
+                <SessionCard title="FP1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="FP2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="Sprint Qualy" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="FP3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="FP3" info={event.Sprint} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="Qualifying" info={event.Qualifying} convertDate={convertDate} convertTime={convertTime} />
+                <SessionCard title="Race" info={event} convertDate={convertDate} convertTime={convertTime} />
             </div>
         </div>
     )
