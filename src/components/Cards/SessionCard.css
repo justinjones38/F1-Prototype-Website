@@ -10,6 +10,11 @@
     justify-items: center;
 }
 
+.card-session-title {
+    margin: 0;
+    line-height: 1.2;
+}
+
 @media (min-width: 600px) {
     .card-session-primary, .card-session-secondary {
         all: unset;
