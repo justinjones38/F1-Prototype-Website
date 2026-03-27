@@ -12,10 +12,12 @@ export default function App() {
   const today = new Date();
   const year = today.getFullYear();
 
-  const getMonthName = (date) => {
-    const monthIndex = new Date(date).getMonth();
+  const convertDate = (date) => {
+    const convertedDate = new Date(date)
+    const monthIndex = convertedDate.getMonth();
+    const newDate = convertedDate.getUTCDate();
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return months[monthIndex]
+    return `${months[monthIndex]} ${newDate}`
   }
 
 
@@ -78,7 +80,7 @@ export default function App() {
           driverStandings={data.driverStandings}
           constructorStandings={data.constructorStandings}
           results={data.results}
-          getMonthName={getMonthName}
+          convertDate={convertDate}
         />
       </main>
 

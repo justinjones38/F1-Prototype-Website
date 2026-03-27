@@ -1,13 +1,12 @@
 import "./HeroSection.css"
-import Card from "../Card/NextRaceCard.jsx"
+import Card from "../Cards/NextRaceCard.jsx"
 
-export default function HeroSection({ calendar, driverStandings, constructorStandings, getMonthName }) {
+export default function HeroSection({ calendar, driverStandings, constructorStandings, convertDate }) {
 
     // Finding the next event, if no event, then section skipped
     const findNextEvent = calendar.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round) + 1);
     const findLastEventCompleted = calendar.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round));
-    console.log(findNextEvent);
-    console.log(findLastEventCompleted);
+
 
     // Getting only the top 5 in driver standings
     const filterDriverStandings = driverStandings.StandingsLists[0].DriverStandings.filter((driver, index) => (
@@ -22,13 +21,9 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
 
             {findNextEvent ? 
                 <Card 
-                    raceInfo="Next Race"
-                    raceTitle={findNextEvent.raceName}
-                    circuitName={findNextEvent.Circuit.circuitName}
-                    date={findNextEvent.date}
-                    getMonthName={getMonthName}
+                    event={findNextEvent}
+                    convertDate={convertDate}
                 /> 
-                
                 : null}
 
             <div className="hero-section-standings">
