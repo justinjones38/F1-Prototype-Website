@@ -20,6 +20,15 @@ export default function App() {
     return `${months[monthIndex]} ${newDate}`
   }
 
+  const convertTime = (date, time) => {
+    const convertedTime = new Date(`${date}T${time}`)
+    const convertedHours = convertedTime.getHours();
+    
+    const hours = convertedHours < 10 ? `0${convertedHours}` : convertedHours;
+    const convertedMinutes = convertedTime.getMinutes();
+    const minutes = convertedMinutes < 10 ? `0${convertedMinutes}` : convertedMinutes;
+    return `${hours}:${minutes}`
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -81,6 +90,7 @@ export default function App() {
           constructorStandings={data.constructorStandings}
           results={data.results}
           convertDate={convertDate}
+          convertTime={convertTime}
         />
       </main>
 
