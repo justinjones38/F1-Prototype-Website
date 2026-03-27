@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./HeroSection.css"
 import Card from "../Card/NextRaceCard.jsx"
 
@@ -6,14 +5,15 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
 
     // Finding the next event, if no event, then section skipped
     const findNextEvent = calendar.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round) + 1);
+    const findLastEventCompleted = calendar.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round));
     console.log(findNextEvent);
+    console.log(findLastEventCompleted);
 
     // Getting only the top 5 in driver standings
     const filterDriverStandings = driverStandings.StandingsLists[0].DriverStandings.filter((driver, index) => (
         index < 5
     ));
 
-    console.log(calendar)
     return (
         <section className="hero-section">
             <h3 className="hero-section-title">
@@ -25,7 +25,8 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
                     raceInfo="Next Race"
                     raceTitle={findNextEvent.raceName}
                     circuitName={findNextEvent.Circuit.circuitName}
-                    date={findNextEvent.date}  
+                    date={findNextEvent.date}
+  
                 /> 
                 
                 : null}

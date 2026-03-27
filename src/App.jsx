@@ -52,7 +52,6 @@ export default function App() {
 
     fetchData()
   }, [])
-  console.log(data);
 
   if (!data || Object.keys(data).length === 0) {
     return;
@@ -73,6 +72,7 @@ export default function App() {
           calendar={data.calendar}
           driverStandings={data.driverStandings}
           constructorStandings={data.constructorStandings}
+          results={data.results}
         />
       </main>
 

@@ -1,6 +1,6 @@
 
 
-export default function Card(props) {
-    console.log(props);
+export default function NextRaceCard(props) {
+    
     return <h1>time</h1>
 }
