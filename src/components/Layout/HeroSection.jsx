@@ -1,7 +1,7 @@
 import "./HeroSection.css"
 import Card from "../Card/NextRaceCard.jsx"
 
-export default function HeroSection({ calendar, driverStandings, constructorStandings }) {
+export default function HeroSection({ calendar, driverStandings, constructorStandings, getMonthName }) {
 
     // Finding the next event, if no event, then section skipped
     const findNextEvent = calendar.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round) + 1);
@@ -26,7 +26,7 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
                     raceTitle={findNextEvent.raceName}
                     circuitName={findNextEvent.Circuit.circuitName}
                     date={findNextEvent.date}
-  
+                    getMonthName={getMonthName}
                 /> 
                 
                 : null}

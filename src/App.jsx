@@ -12,6 +12,11 @@ export default function App() {
   const today = new Date();
   const year = today.getFullYear();
 
+  const getMonthName = (date) => {
+    const monthIndex = new Date(date).getMonth();
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return months[monthIndex]
+  }
 
 
   useEffect(() => {
@@ -73,6 +78,7 @@ export default function App() {
           driverStandings={data.driverStandings}
           constructorStandings={data.constructorStandings}
           results={data.results}
+          getMonthName={getMonthName}
         />
       </main>
 
