@@ -1,0 +1,14 @@
+.card-last {
+    background-color: var(--secondary-bg-color);
+    border-radius: 8px;
+    width: 98%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0.25em 0.5em;
+}
+
+.card-last-info {
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+

@@ -25,7 +25,7 @@ export default function NextRaceCard({ event, convertDate, convertTime }) {
                 </div>
                 <div className="card-next-countdown-container">
                     <p className="card-next-countdown">
-                        <span>{getTimeDifference(event.date)}</span> days to go
+                        <span>{getTimeDifference(event.date)}</span> days until race
                     </p>
                 </div>
             </div>

@@ -2,6 +2,7 @@
     border: 1px solid var(--button-nav-color);
     padding: 0.25em 0.5em;
     border-radius: 8px;
+    margin-bottom: 1em;
 }
 
 .card-next-race-info {

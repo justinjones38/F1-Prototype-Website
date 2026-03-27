@@ -1,0 +1,15 @@
+.card-last-table {
+    width: 100%;
+}
+
+.card-last-table th {
+    text-align: left;
+}
+
+
+
+.card-last-table th,
+.card-last-table td {
+    padding: 0.25em;
+}
+

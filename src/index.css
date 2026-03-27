@@ -13,6 +13,7 @@ CSS VARIABLES
 ============================================*/
 :root {
   --bg-color: #f2f2f0;
+  --secondary-bg-color: #D5D7D7;
   --text-primary-color: #000000;
   --button-nav-color: #DC0000;
   --button-nav-text-color: #ffffff;
