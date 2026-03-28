@@ -39,7 +39,6 @@ NAVBAR
     background-color: var(--button-nav-color);
     opacity: 97%;
     transform: translateY(-100%);
-    transition: 0.3s transform;
 }
 
 .nav-menu.show {

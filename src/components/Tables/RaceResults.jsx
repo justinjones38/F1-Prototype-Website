@@ -6,17 +6,17 @@ export default function RaceResults({ podiumResults }) {
         <table className="card-last-table">
             <thead className="card-last-thead">
                 <tr className="card-last-thead-row">
-                    <th aria-label="Position">Pos.</th>
-                    <th>Driver</th>
-                    <th>Gap</th>
+                    <th className="pos-col" aria-label="Position">Pos.</th>
+                    <th className="driver-col">Driver</th>
+                    <th className="gap-col">Gap</th>
                 </tr>
             </thead>
             <tbody className="card-last-body">
                 {podiumResults.map(driver => (
                     <tr key={driver.number} className="card-last-tbody-row">
-                        <td>{driver.position}</td>
-                        <td>{driver.Driver.givenName} {driver.Driver.familyName}</td>
-                        <td>{driver.Time.time}</td>
+                        <td className="pos-col">{driver.position}</td>
+                        <td className="driver-col">{driver.Driver.givenName} {driver.Driver.familyName}</td>
+                        <td className="gap-col">{driver.Time.time}</td>
                     </tr>
                 ))}
             </tbody>
