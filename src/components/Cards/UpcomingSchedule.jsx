@@ -1,7 +1,6 @@
 import "./SecondaryHeroCard.css"
 
 export default function UpcomingSchedule(props) {
-    console.log(props.upcomingSchedule)
     return (
         <div className="card-upcoming-container">
             <p className="card-upcoming-info">Upcoming Schedule</p>

@@ -2,6 +2,9 @@ import "./HeroSection.css"
 import NextRaceCard from "../Cards/NextRaceCard.jsx";
 import LastRaceCard from "../Cards/LastRaceCard.jsx";
 import UpcomingSchedule from "../Cards/UpcomingSchedule.jsx";
+import DriverStandings from "../Tables/DriverStandings.jsx";
+import ConstructorStandings from "../Tables/ConstructorStandings.jsx";
+
 import { useState } from "react";
 
 export default function HeroSection({ calendar, driverStandings, constructorStandings, results, convertDate, convertTime }) {
@@ -17,12 +20,16 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
     const findLastEventCompleted = results.Races.find(event => parseInt(event.round) === eventRoundCompleted);
 
     // Get upcoming schedule for calendar
-     console.log(calendar.Races);
-     const upcomingSchedule = calendar.Races.filter(event => event.round > eventRoundCompleted + 1 && event.round < eventRoundCompleted + 5);
+    const upcomingSchedule = calendar.Races.filter(event => event.round > eventRoundCompleted + 1 && event.round < eventRoundCompleted + 5);
 
 
     // Getting only the top 5 in driver standings
     const filterDriverStandings = driverStandings.StandingsLists[0].DriverStandings.filter((driver, index) => (
+        index < 5
+    ));
+
+    // Getting only the top 5 in the constructor standings
+    const filterConstructorStandings = constructorStandings.StandingsLists[0].ConstructorStandings.filter((constructor, index) => (
         index < 5
     ));
 
@@ -32,36 +39,37 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
                 {calendar.season} Season - Round {constructorStandings.round} of {calendar.Races.length}
             </h3>
 
-            {findNextEvent ? 
+            {findNextEvent ?
                 <NextRaceCard
                     event={findNextEvent}
                     convertDate={convertDate}
                     convertTime={convertTime}
-                /> 
+                />
                 : null}
 
             <div className="hero-secondary-cards">
-                {findLastEventCompleted ? 
+                {findLastEventCompleted ?
                     <LastRaceCard
                         event={findLastEventCompleted}
-                    /> 
-                : null}
+                    />
+                    : null}
 
                 {upcomingSchedule && upcomingSchedule.length !== 0 ?
                     <UpcomingSchedule upcomingSchedule={upcomingSchedule} convertDate={convertDate} />
-                : null}
+                    : null}
             </div>
 
 
             <div className="hero-section-standings">
                 <div className="hero-section-button-container">
-                    <button disabled={driverStandingsState} className="hero-section-button" onClick={() =>setDriverStandingsState(true)}>Drivers</button>
+                    <button disabled={driverStandingsState} className="hero-section-button" onClick={() => setDriverStandingsState(true)}>Drivers</button>
                     <button disabled={!driverStandingsState} className="hero-section-button" onClick={() => setDriverStandingsState(false)}>Constructors</button>
                 </div>
-                <div className="hero-section-drivers">
-
-                </div>
-                <div className="hero-section-constructors"></div>
+                {driverStandingsState ?
+                    <DriverStandings drivers={filterDriverStandings} isFiltered={true} />
+                    :
+                    <ConstructorStandings constructors={filterConstructorStandings} isFiltered={true} />
+                }
             </div>
         </section>
     )

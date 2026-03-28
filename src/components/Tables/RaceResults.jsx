@@ -1,7 +1,6 @@
 import "./RaceResults.css"
 
 export default function RaceResults({ podiumResults }) {
-    console.log(podiumResults);
     return (
         <table className="card-last-table">
             <thead className="card-last-thead">
