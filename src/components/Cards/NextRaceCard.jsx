@@ -30,10 +30,11 @@ export default function NextRaceCard({ event, convertDate, convertTime }) {
                 </div>
             </div>
             <div className="card-next-session-times">
-                <SessionCard title="FP1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="FP2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="Sprint Qualy" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="FP3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <h3 className="card-next-session-times-header">Weekend Schedule</h3>
+                <SessionCard title="Free Practice 1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="Free Practice 2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="Sprint Qualifying" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
+                <SessionCard title="Free Practice 3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
                 <SessionCard title="Sprint" info={event.Sprint} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
                 <SessionCard title="Qualifying" info={event.Qualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={true} />
                 <SessionCard title="Race" info={event} convertDate={convertDate} convertTime={convertTime} isPrimary={true} />

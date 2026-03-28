@@ -1,23 +1,22 @@
-.card-session-primary {
-    grid-column: span 3;
-    justify-content: space-between;
-    justify-items: center;
+.card-session {
+    display: flex;
+    gap: 0.5em;
+    border-bottom: var(--bottom-border);
+    padding-bottom: 0.25em;
+    margin-bottom: 0.25em;
 }
 
-.card-session-secondary {
-    grid-column: span 2;
-    justify-content: space-between;
-    justify-items: center;
+.card-session:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-.card-session-title {
-    margin: 0;
-    line-height: 1.2;
+.card-session-date {
+    margin-left: auto;
 }
 
-@media (min-width: 600px) {
-    .card-session-primary, .card-session-secondary {
-        all: unset;
-        justify-items: center;
-    }
+.card-session-date::after {
+    display: inline;
+    content: " - "
 }
