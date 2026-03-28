@@ -2,8 +2,10 @@ import "./HeroSection.css"
 import NextRaceCard from "../Cards/NextRaceCard.jsx";
 import LastRaceCard from "../Cards/LastRaceCard.jsx";
 import UpcomingSchedule from "../Cards/UpcomingSchedule.jsx";
+import { useState } from "react";
 
 export default function HeroSection({ calendar, driverStandings, constructorStandings, results, convertDate, convertTime }) {
+    const [driverStandingsState, setDriverStandingsState] = useState(true);
 
     // Get current round of schedule
     const eventRoundCompleted = parseInt(constructorStandings.round);
@@ -52,6 +54,10 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
 
 
             <div className="hero-section-standings">
+                <div className="hero-section-button-container">
+                    <button disabled={driverStandingsState} className="hero-section-button" onClick={() =>setDriverStandingsState(true)}>Drivers</button>
+                    <button disabled={!driverStandingsState} className="hero-section-button" onClick={() => setDriverStandingsState(false)}>Constructors</button>
+                </div>
                 <div className="hero-section-drivers">
 
                 </div>

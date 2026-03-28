@@ -8,6 +8,33 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    margin-bottom: 1em;
+}
+
+.hero-section-button-container {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 1em;
+}
+
+.hero-section-button {
+    background-color: var(--button-nav-color);
+    color: var(--button-nav-text-color);
+    font-size: 1.1rem;
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    transition: 0.3s background-color;
+}
+
+.hero-section-button:hover {
+    background-color: var(--button-nav-color-hover);
+}
+
+.hero-section-button:disabled {
+    background-color: #808080;
 }
 
 @media (min-width: 600px) {
