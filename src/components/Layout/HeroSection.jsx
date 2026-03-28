@@ -1,13 +1,22 @@
 import "./HeroSection.css"
 import NextRaceCard from "../Cards/NextRaceCard.jsx";
 import LastRaceCard from "../Cards/LastRaceCard.jsx";
+import UpcomingSchedule from "../Cards/UpcomingSchedule.jsx";
 
 export default function HeroSection({ calendar, driverStandings, constructorStandings, results, convertDate, convertTime }) {
 
+    // Get current round of schedule
+    const eventRoundCompleted = parseInt(constructorStandings.round);
+
     // Finding the next event, if no event, then section skipped
-    const findNextEvent = calendar.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round) + 1);
-    const findLastEventCompleted = results.Races.find(event => parseInt(event.round) === parseInt(constructorStandings.round));
-    console.log(findLastEventCompleted);
+    const findNextEvent = calendar.Races.find(event => parseInt(event.round) === eventRoundCompleted + 1);
+
+    // Find the last event completed, if season has started, then it is skipped
+    const findLastEventCompleted = results.Races.find(event => parseInt(event.round) === eventRoundCompleted);
+
+    // Get upcoming schedule for calendar
+     console.log(calendar.Races);
+     const upcomingSchedule = calendar.Races.filter(event => event.round > eventRoundCompleted + 1 && event.round < eventRoundCompleted + 5);
 
 
     // Getting only the top 5 in driver standings
@@ -29,11 +38,18 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
                 /> 
                 : null}
 
-            {findLastEventCompleted ? 
-                <LastRaceCard
-                    event={findLastEventCompleted}
-                /> 
-            : null}
+            <div className="hero-secondary-cards">
+                {findLastEventCompleted ? 
+                    <LastRaceCard
+                        event={findLastEventCompleted}
+                    /> 
+                : null}
+
+                {upcomingSchedule && upcomingSchedule.length !== 0 ?
+                    <UpcomingSchedule upcomingSchedule={upcomingSchedule} convertDate={convertDate} />
+                : null}
+            </div>
+
 
             <div className="hero-section-standings">
                 <div className="hero-section-drivers">

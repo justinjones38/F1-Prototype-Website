@@ -1,5 +1,5 @@
 import RaceResults from "../Tables/RaceResults"
-import "./LastRaceCard.css"
+import "./SecondaryHeroCard.css"
 
 export default function LastRaceCard(props) {
     const podiumResults = props.event.Results.filter((item, index) => index < 3)

@@ -18,7 +18,7 @@ CSS VARIABLES
   --button-nav-color: #DC0000;
   --button-nav-text-color: #ffffff;
   --secondary-text-color: rgba(0, 0, 0, 80%);
-  
+  --bottom-border: 1px solid rgba(4, 4, 4, 0.137);
 }
 
 

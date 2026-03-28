@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 1em;
-    border-bottom: 1px solid rgba(4, 4, 4, 0.137);
+    border-bottom: var(--bottom-border);
     margin-bottom: 1em;
 }
 

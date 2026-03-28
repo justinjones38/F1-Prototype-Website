@@ -6,7 +6,7 @@ export default function RaceResults({ podiumResults }) {
         <table className="card-last-table">
             <thead className="card-last-thead">
                 <tr className="card-last-thead-row">
-                    <th>Pos</th>
+                    <th aria-label="Position">Pos.</th>
                     <th>Driver</th>
                     <th>Gap</th>
                 </tr>
