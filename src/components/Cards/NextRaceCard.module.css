@@ -44,6 +44,7 @@
     text-align: right;
     font-size: 1.5rem;
     color: var(--button-nav-color);
+    font-weight: 600;
     line-height: 1;
 }
 
