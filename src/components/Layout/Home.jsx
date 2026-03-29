@@ -1,4 +1,4 @@
-import "./HeroSection.css"
+import styles from "./Home.module.css"
 import NextRaceCard from "../Cards/NextRaceCard.jsx";
 import LastRaceCard from "../Cards/LastRaceCard.jsx";
 import UpcomingSchedule from "../Cards/UpcomingSchedule.jsx";
@@ -7,11 +7,12 @@ import ConstructorStandings from "../Tables/ConstructorStandings.jsx";
 
 import { useState } from "react";
 
-export default function HeroSection({ calendar, driverStandings, constructorStandings, results, convertDate, convertTime }) {
+export default function HeroSection({ calendar, driverStandings, constructorStandings, results }) {
     const [driverStandingsState, setDriverStandingsState] = useState(true);
+    console.log(results.Races.length);
 
-    // Get current round of schedule
-    const eventRoundCompleted = parseInt(constructorStandings.round);
+    // Get current round of schedule by checking how many races have results for them
+    const eventRoundCompleted = results.Races.length;
 
     // Finding the next event, if no event, then section skipped
     const findNextEvent = calendar.Races.find(event => parseInt(event.round) === eventRoundCompleted + 1);
@@ -34,20 +35,18 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
     ));
 
     return (
-        <section className="hero-section">
-            <h3 className="hero-section-title">
+        <section className={styles.homeSection}>
+            <h3 className={styles.homeTitle}>
                 {calendar.season} Season - Round {constructorStandings.round} of {calendar.Races.length}
             </h3>
 
             {findNextEvent ?
                 <NextRaceCard
                     event={findNextEvent}
-                    convertDate={convertDate}
-                    convertTime={convertTime}
                 />
                 : null}
 
-            <div className="hero-secondary-cards">
+            <div className={styles.homeSecondaryCards}>
                 {findLastEventCompleted ?
                     <LastRaceCard
                         event={findLastEventCompleted}
@@ -55,15 +54,16 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
                     : null}
 
                 {upcomingSchedule && upcomingSchedule.length !== 0 ?
-                    <UpcomingSchedule upcomingSchedule={upcomingSchedule} convertDate={convertDate} />
+                    <UpcomingSchedule 
+                        upcomingSchedule={upcomingSchedule} />
                     : null}
             </div>
 
 
-            <div className="hero-section-standings">
-                <div className="hero-section-button-container">
-                    <button disabled={driverStandingsState} className="hero-section-button" onClick={() => setDriverStandingsState(true)}>Drivers</button>
-                    <button disabled={!driverStandingsState} className="hero-section-button" onClick={() => setDriverStandingsState(false)}>Constructors</button>
+            <div className={styles.homeStandings}>
+                <div className={styles.homeButtonContainer}>
+                    <button disabled={driverStandingsState} className={styles.homeButton} onClick={() => setDriverStandingsState(true)}>Drivers</button>
+                    <button disabled={!driverStandingsState} className={styles.homeButton} onClick={() => setDriverStandingsState(false)}>Constructors</button>
                 </div>
                 {driverStandingsState ?
                     <DriverStandings drivers={filterDriverStandings} isFiltered={true} />

@@ -1,5 +1,5 @@
 /* Styles for the secondary in the hero section */
-.card-last, .card-upcoming-container {
+.cardContainer {
     background-color: var(--secondary-bg-color);
     border-radius: 8px;
     width: 98%;
@@ -9,23 +9,23 @@
 }
 
 /* LASTRACECARD specific styling */
-.card-last-info, .card-upcoming-info {
+.cardInfo {
     font-size: 0.95rem;
     line-height: 1.2;
     margin-bottom: 0.25em;
 }
 
 /* Upcoming Schedule Card */
-.card-upcoming-container {
+.cardContainerUpcoming {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
 
-.card-upcoming-info {
+.cardUpcomingInfo {
     grid-column: span 6;
 }
 
-.card-upcoming-race {
+.cardMiniContainer {
     grid-column: span 6;
     display: flex;
     justify-content: space-between;
@@ -35,12 +35,12 @@
     border-bottom: var(--bottom-border);
 }
 
-.card-upcoming-race:last-child {
+.cardMiniContainer:last-child {
     margin-bottom: 0;
     border-bottom: none;
 }
 
-.card-upcoming-race-round {
+.cardUpcomingRound {
     line-height: 1.2;
     margin: 0;
     font-size: 0.8rem;

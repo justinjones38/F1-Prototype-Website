@@ -1,34 +1,26 @@
-import { useEffect, useState } from 'react'
+import './App.module.css'
 import Navbar from './components/Navbar/Navbar';
-
-import './App.css'
-import HeroSection from './components/Layout/HeroSection';
+import Home from './components/Layout/Home';
+import { useEffect, useState } from 'react'
 
 export default function App() {
   // Gets the width of the screensize
   const [data, setData] = useState({})
   const [error, setError] = useState(false);
+  const [windowWidth, setWindowWith] = useState(window.innerWidth);
 
   const today = new Date();
   const year = today.getFullYear();
 
-  const convertDate = (date) => {
-    const convertedDate = new Date(date)
-    const monthIndex = convertedDate.getMonth();
-    const newDate = convertedDate.getUTCDate();
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return `${months[monthIndex]} ${newDate}`
-  }
-
-  const convertTime = (date, time) => {
-    const convertedTime = new Date(`${date}T${time}`)
-    const convertedHours = convertedTime.getHours();
-    
-    const hours = convertedHours < 10 ? `0${convertedHours}` : convertedHours;
-    const convertedMinutes = convertedTime.getMinutes();
-    const minutes = convertedMinutes < 10 ? `0${convertedMinutes}` : convertedMinutes;
-    return `${hours}:${minutes}`
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWith(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    }
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +42,7 @@ export default function App() {
 
         const fetchingData = await Promise.all(dataRes.map(res => res.json()));
 
-      //  Getting the values from the fetchingData Array
+        //  Getting the values from the fetchingData Array
         const [calendar, driverStandings, constructorStandings, drivers, constructors, results] = fetchingData;
 
         setData({
@@ -81,16 +73,14 @@ export default function App() {
   return (
     <div className='app'>
       <header>
-        <Navbar />
+        <Navbar windowWidth={windowWidth} />
       </header>
       <main>
-        <HeroSection
+        <Home
           calendar={data.calendar}
           driverStandings={data.driverStandings}
           constructorStandings={data.constructorStandings}
           results={data.results}
-          convertDate={convertDate}
-          convertTime={convertTime}
         />
       </main>
 

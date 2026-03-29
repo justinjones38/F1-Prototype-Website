@@ -1,0 +1,11 @@
+.table {
+    width: 100%;
+}
+
+.tableHeadRow {
+    text-align: left;
+}
+
+.tableHeadRow > *, .tableBodyRow > * {
+    padding: 0.5em;
+}

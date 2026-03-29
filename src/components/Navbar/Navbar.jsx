@@ -1,4 +1,4 @@
-import "./Navbar.css"
+import styles from "./Navbar.module.css"
 import { useState, useEffect } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -11,10 +11,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, far, fab)
 
 
-export default function Navbar() {
+export default function Navbar({windowWidth}) {
     // Setting state to track whether hamburger menu is open or closed 
-    const [hamburgerMenu, setHamburgerMenu] = useState(false);
-    const [windowWidth, setWindowWith] = useState(window.innerWidth);
+    const [hamburgerButton, setHamburgerButton] = useState(false);
 
 
     // Array of navItems 
@@ -36,30 +35,19 @@ export default function Navbar() {
         link: "#teams"
     }]
 
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWith(window.innerWidth);
-        }
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        }
-    }, [])
-
-
 
 
     return (
-        <nav className="navbar">
-            <h1 className="nav-title">
-                <a href="#home" className="nav-title-link">F1 Pit Wall</a>
+        <nav className={styles.navbar}>
+            <h1 className={styles.navTitle}>
+                <a href="#home" className={styles.navTitleLink}>F1 Pit Wall</a>
             </h1>
-            <button className="hamburger-menu" onClick={() => setHamburgerMenu(true)}><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
-            <div className={hamburgerMenu && windowWidth < 600 ? "nav-menu show" : "nav-menu"} onClick={() => setHamburgerMenu(false)}>
-                <button className="close-button" onClick={() => setHamburgerMenu(false)}><FontAwesomeIcon icon="fa-solid fa-x" /></button>
-                <ul className="nav-items">
+            <button className={styles.hamburgerMenu} onClick={() => setHamburgerButton(true)}><FontAwesomeIcon icon="fa-solid fa-bars" /></button>
+            <div className={hamburgerButton && windowWidth < 600 ? `${styles.navMenu} ${styles.show}` : `${styles.navMenu}`} onClick={() => setHamburgerButton(false)}>
+                <button className={styles.closeButton} onClick={() => setHamburgerButton(false)}><FontAwesomeIcon icon="fa-solid fa-x" /></button>
+                <ul className={styles.navItems}>
                     {navItems.map(navItem => (
-                        <li className="nav-item" key={navItem.id}><a href={navItem.link} className="nav-link">{navItem.name}</a></li>
+                        <li className={styles.navItem} key={navItem.id}><a href={navItem.link} className={styles.navLink}>{navItem.name}</a></li>
                     ))}
                 </ul>
             </div>

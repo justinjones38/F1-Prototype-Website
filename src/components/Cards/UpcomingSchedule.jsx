@@ -1,17 +1,18 @@
-import "./SecondaryHeroCard.css"
+import styles from "./SecondaryHeroCard.module.css"
+import { convertDate } from "../../utils/helper"
 
 export default function UpcomingSchedule(props) {
     return (
-        <div className="card-upcoming-container">
-            <p className="card-upcoming-info">Upcoming Schedule</p>
+        <div className={`${styles.cardContainer} ${styles.cardContainerUpcoming}`}>
+            <p className={styles.cardUpcomingInfo}>Upcoming Schedule</p>
             {props.upcomingSchedule.map(event => (
-                <div className="card-upcoming-race" key={event.round}>
-                    <div className="card-upcoming-race-left">
-                        <h4 className="card-upcoming-race-title">{event.raceName}</h4>
-                        <p className="card-upcoming-race-round">Round {event.round}</p>
+                <div className={styles.cardMiniContainer} key={event.round}>
+                    <div className={styles.cardUpcomingLeftSide}>
+                        <h4 className={styles.cardUpcomingTitle}>{event.raceName}</h4>
+                        <p className={styles.cardUpcomingRound}>Round {event.round}</p>
                     </div>
-                    <div className="card-upcoming-race-right">
-                        <p className="card-upcoming-race-date">{props.convertDate(event.date)}</p>
+                    <div className={styles.cardUpcomingRightSide}>
+                        <p className={styles.cardUpcomingDate}>{convertDate(event.date, event.time)}</p>
                     </div>
                 </div>
             ))}

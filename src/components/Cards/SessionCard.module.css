@@ -1,4 +1,4 @@
-.card-session {
+.cardContainer {
     display: flex;
     gap: 0.5em;
     border-bottom: var(--bottom-border);
@@ -6,17 +6,17 @@
     margin-bottom: 0.25em;
 }
 
-.card-session:last-child {
+.cardContainer:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.card-session-date {
+.cardDate {
     margin-left: auto;
 }
 
-.card-session-date::after {
+.cardDate::after {
     display: inline;
     content: " - "
 }

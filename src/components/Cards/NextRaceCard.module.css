@@ -1,11 +1,11 @@
-.card-next-container {
+.cardContainer {
     border: 1px solid var(--button-nav-color);
     padding: 0.25em 0.5em;
     border-radius: 8px;
     margin-bottom: 1em;
 }
 
-.card-next-race-info {
+.cardRaceInfo {
     display: flex;
     justify-content: space-between;
     padding-bottom: 1em;
@@ -13,33 +13,33 @@
     margin-bottom: 1em;
 }
 
-.card-next-alert {
+.cardInfo {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: var(--button-nav-color);
     margin-bottom: 0;
 }
 
-.card-next-header {
+.cardHeader {
     line-height: 1.2;
     font-weight: 600;
 }
 
-.card-next-description {
+.cardDescription {
     font-size: 0.8rem;
 }
 
-.card-next-countdown-container {
+.cardCountdownContainer {
     align-self: center;
 
 }
 
-.card-next-countdown {
+.cardCountdown {
     font-size: 0.75rem;
     
 }
 
-.card-next-countdown>span {
+.cardCountdown>span {
     display: block;
     text-align: right;
     font-size: 1.5rem;
@@ -47,6 +47,6 @@
     line-height: 1;
 }
 
-.card-next-session-times-header {
+.cardSessionTimesHeader {
     font-size: 0.9rem;
 }

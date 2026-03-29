@@ -1,43 +1,45 @@
-import "./NextRaceCard.css"
+import styles from "./NextRaceCard.module.css"
 import SessionCard from "./SessionCard";
+import { convertDate, convertTime } from "../../utils/helper";
 
-export default function NextRaceCard({ event, convertDate, convertTime }) {
+export default function NextRaceCard({ event }) {
 
     const today = new Date().getTime();
 
     // Function to get days between section
-    const getTimeDifference = (date) => {
-        const raceDate = new Date(date).getTime();
+    const getTimeDifference = (date, time) => {
+        const raceDate = new Date(`${date}T${time}`).getTime();
         return Math.ceil((raceDate - today) / 1000 / 3600 / 24)
     }
 
+    const timeRemaining = getTimeDifference(event.date, event.time);
 
     return (
-        <div className="card-next-container">
-            <div className="card-next-race-info">
-                <div className="card-next-track-info">
-                    <p className="card-next-alert">Next Race</p>
-                    <h3 className="card-next-header">{event.raceName}</h3>
-                    <p className="card-next-description">
-                        {convertDate(event.date)} - {event.Circuit.circuitName}
+        <div className={styles.cardContainer}>
+            <div className={styles.cardRaceInfo}>
+                <div className={styles.cardTrackInfo}>
+                    <p className={styles.cardInfo}>Next Race</p>
+                    <h3 className={styles.cardHeader}>{event.raceName}</h3>
+                    <p className={styles.cardDescription}>
+                        {convertDate(event.date, event.time)} - {event.Circuit.circuitName}
                     </p>
 
                 </div>
-                <div className="card-next-countdown-container">
-                    <p className="card-next-countdown">
-                        <span>{getTimeDifference(event.date)}</span> days until race
+                <div className={styles.cardCountdownContainer}>
+                    <p className={styles.cardCountdown}>
+                        <span>{timeRemaining}</span> {timeRemaining === 1 ? "day until race" : "days until race"}
                     </p>
                 </div>
             </div>
-            <div className="card-next-session-times">
-                <h3 className="card-next-session-times-header">Weekend Schedule</h3>
-                <SessionCard title="Free Practice 1" info={event.FirstPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="Free Practice 2" info={event.SecondPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="Sprint Qualifying" info={event.SprintQualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="Free Practice 3" info={event.ThirdPractice} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="Sprint" info={event.Sprint} convertDate={convertDate} convertTime={convertTime} isPrimary={false} />
-                <SessionCard title="Qualifying" info={event.Qualifying} convertDate={convertDate} convertTime={convertTime} isPrimary={true} />
-                <SessionCard title="Race" info={event} convertDate={convertDate} convertTime={convertTime} isPrimary={true} />
+            <div className={styles.cardSessionTimes}>
+                <h3 className={styles.cardSessionTimesHeader}>Weekend Schedule</h3>
+                <SessionCard title="Free Practice 1" info={event.FirstPractice} isPrimary={false} />
+                <SessionCard title="Free Practice 2" info={event.SecondPractice}  isPrimary={false} />
+                <SessionCard title="Sprint Qualifying" info={event.SprintQualifying} isPrimary={false} />
+                <SessionCard title="Free Practice 3" info={event.ThirdPractice} isPrimary={false} />
+                <SessionCard title="Sprint" info={event.Sprint} isPrimary={false} />
+                <SessionCard title="Qualifying" info={event.Qualifying}  isPrimary={true} />
+                <SessionCard title="Race" info={event} isPrimary={true} />
             </div>
         </div>
     )
