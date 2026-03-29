@@ -7,7 +7,7 @@ import ConstructorStandings from "../Tables/ConstructorStandings.jsx";
 
 import { useState } from "react";
 
-export default function HeroSection({ calendar, driverStandings, constructorStandings, results, windowWidth }) {
+export default function HeroSection({ calendar, driverStandings, constructorStandings, results }) {
     const [driverStandingsState, setDriverStandingsState] = useState(true);
 
     console.log(results);
@@ -43,7 +43,6 @@ export default function HeroSection({ calendar, driverStandings, constructorStan
             {findNextEvent ?
                 <NextRaceCard
                     event={findNextEvent}
-                    windowWidth={windowWidth}
                 />
                 : null}
 

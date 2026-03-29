@@ -2,7 +2,7 @@ import styles from "./SessionCard.module.css"
 import { convertDate, convertTime, getDayOfWeek } from "../../utils/helper";
 
 export default function SessionCard(props) {
-    if(!props.info || Object.keys(props.info).length === 0) {
+    if (!props.info || Object.keys(props.info).length === 0) {
         return;
     }
 
@@ -11,7 +11,7 @@ export default function SessionCard(props) {
     return (
         <div className={styles.cardContainer}>
             <h4 className={styles.cardTitle}>{props.title}</h4>
-            {props.windowWidth >= 600 ? <p className={styles.cardDay} aria-label={dayOfWeek.full}>{dayOfWeek.abbr}</p> : null}
+            <p className={styles.cardDay} aria-label={dayOfWeek.full}>{dayOfWeek.abbr}</p>
             <p className={styles.cardDate}>{convertDate(props.info.date, props.info.time)}</p>
             <p className={styles.cardTime}>{convertTime(props.info.date, props.info.time)}</p>
         </div>
