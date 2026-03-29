@@ -13,8 +13,32 @@ export function convertTime(date, time) {
     const convertedMinutes = convertedTime.getMinutes();
     const minutes = convertedMinutes < 10 ? `0${convertedMinutes}` : convertedMinutes;
     return `${hours}:${minutes}`
-  }
+}
 
-  export function getDayOfWeek(date) {
-    const convertTime = new Date(date);
-  }
+export function getDayOfWeek(date, time) {
+    const convertedTime = new Date(`${date}T${time}`);
+    const dayIndex = convertedTime.getDay();
+    const dayOfWeek = [{
+        abbr: "Sun",
+        full: "Sunday"
+    }, {
+        abbr: "Mon",
+        full: "Monday"
+    }, {
+        abbr: "Tue",
+        full: "TUesday"
+    }, {
+        abbr: "Wed",
+        full: "Wednesday"
+    }, {
+        abbr: "Thu",
+        full: "Thursday"
+    }, {
+        abbr: "Fri",
+        full: "Friday"
+    }, {
+        abbr: "Sat",
+        full: "Saturday"
+    },];
+    return dayOfWeek[dayIndex]
+}

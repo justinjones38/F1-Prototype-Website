@@ -81,6 +81,7 @@ export default function App() {
           driverStandings={data.driverStandings}
           constructorStandings={data.constructorStandings}
           results={data.results}
+          windowWidth={windowWidth}
         />
       </main>
 
