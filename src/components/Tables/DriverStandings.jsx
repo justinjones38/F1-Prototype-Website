@@ -1,6 +1,7 @@
 import styles from "./Standings.module.css"
 
 export default function DriverStandings({drivers, isFiltered}) {
+    console.log(drivers);
     return (
         <div className={styles.container}>
             <table className={styles.table}>

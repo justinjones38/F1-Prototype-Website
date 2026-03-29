@@ -31,7 +31,7 @@ export default function App() {
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructorstandings/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/drivers/?format=json`),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/constructors/?format=json`),
-          fetch(`https://api.jolpi.ca/ergast/f1/${year}/results/?format=json`)
+          fetch(`https://api.jolpi.ca/ergast/f1/${year}/results/?format=json&limit=1000`)
         ])
 
         dataRes.forEach(res => {

@@ -9,8 +9,8 @@ import { useState } from "react";
 
 export default function HeroSection({ calendar, driverStandings, constructorStandings, results }) {
     const [driverStandingsState, setDriverStandingsState] = useState(true);
-    console.log(results.Races.length);
 
+    console.log(results);
     // Get current round of schedule by checking how many races have results for them
     const eventRoundCompleted = results.Races.length;
 

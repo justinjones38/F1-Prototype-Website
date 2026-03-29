@@ -16,11 +16,12 @@ CSS VARIABLES
   --secondary-bg-color: #D5D7D7;
   --text-primary-color: #000000;
   --button-nav-color: #DC0000;
-  --button-nav-color-hover: #750000;
+  --button-nav-color-hover: #eec2c2;
   --button-nav-text-color: #ffffff;
   --btn-disabled-color: #808080;
   --secondary-text-color: rgba(0, 0, 0, 80%);
   --bottom-border: 1px solid rgba(4, 4, 4, 0.137);
+  --home-button-border-color: 2px solid rgba(43, 42, 42, 0.284);
 }
 
 
