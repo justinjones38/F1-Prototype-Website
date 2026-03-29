@@ -22,7 +22,7 @@ th.posCol, .posCol {
     text-align: center;
 }
 
-.posCol {
+.posCol, .gapCol {
     vertical-align: text-top;
 }
 

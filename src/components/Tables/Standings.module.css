@@ -8,7 +8,7 @@
 }
 
 .tableHeadRow > *, .tableBodyRow > * {
-    padding: 0.5em;
+    padding: 0.25em 0.5em;
 }
 
 .tableBodyRow {
@@ -19,11 +19,10 @@
     border: none;
 }
 
-.posCol {
-    vertical-align: top;
-}
+
 .posCol, .pointsCol, .winsCol {
     text-align: center;
+    vertical-align: top;
 }
 
 /* Driver Standings Styling */

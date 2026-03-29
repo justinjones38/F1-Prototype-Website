@@ -30,7 +30,7 @@
 .cardMiniContainer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     padding-bottom: 0.5em;
     margin-bottom: 0.25em;
     border-bottom: var(--bottom-border);
