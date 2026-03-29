@@ -4,6 +4,11 @@
     max-width: 1000px;
 }
 
+.homeTitle {
+    font-weight: 600;
+    margin-bottom: 0.25em;
+}
+
 .homeSecondaryCards {
     display: flex;
     flex-direction: column;
