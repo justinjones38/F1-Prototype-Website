@@ -12,14 +12,20 @@ CSS RESET
 CSS VARIABLES
 ============================================*/
 :root {
+  /* Background colors */
   --bg-color: #f2f2f0;
   --secondary-bg-color: #D5D7D7;
+
+  /* Text colors */
   --text-primary-color: #000000;
+  --faded-text-color: rgba(0, 0, 0, 0.75);
   --button-nav-color: #DC0000;
   --button-nav-color-hover: #eec2c2;
   --button-nav-text-color: #ffffff;
   --btn-disabled-color: #808080;
   --secondary-text-color: rgba(0, 0, 0, 80%);
+
+  /* Stylings */
   --bottom-border: 1px solid rgba(4, 4, 4, 0.137);
   --home-button-border-color: 2px solid rgba(43, 42, 42, 0.284);
 }
@@ -28,6 +34,10 @@ CSS VARIABLES
 /* =========================================
 BASE STYLES
 ============================================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
   font-size: 1rem;

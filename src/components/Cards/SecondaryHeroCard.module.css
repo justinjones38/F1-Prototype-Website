@@ -16,21 +16,22 @@
 }
 
 /* Upcoming Schedule Card */
-.cardContainerUpcoming {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+.cardUpcomingInfo {
+    margin-bottom: 0.5em;
 }
 
-.cardUpcomingInfo {
-    grid-column: span 6;
+.cardContainerUpcoming {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 
 .cardMiniContainer {
-    grid-column: span 6;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 0.25em;
+    padding-bottom: 0.5em;
     margin-bottom: 0.25em;
     border-bottom: var(--bottom-border);
 }

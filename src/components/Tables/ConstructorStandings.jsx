@@ -8,19 +8,19 @@ export default function ConstructorStandings({constructors, isFiltered}) {
             <table className={styles.table}>
                 <thead className={styles.tableHead}>
                     <tr className={styles.tableHeadRow}>
-                        <th>Pos.</th>
-                        <th>Constructor</th>
-                        <th>Points</th>
-                        <th>Wins</th>
+                        <th className={styles.posCol}>Pos</th>
+                        <th className={styles.nameCol}>Constructor</th>
+                        <th className={styles.pointsCol}>Points</th>
+                        <th className={styles.winsCol}>Wins</th>
                     </tr>
                 </thead>
                 <tbody className={styles.tableBody}>
                     {constructors.map(constructor => (
                         <tr className={styles.tableBodyRow} key={constructor.Constructor.constructorId}>
-                            <td>{constructor.position}</td>
-                            <td>{constructor.Constructor.name}</td>
-                            <td>{constructor.points}</td>
-                            <td>{constructor.wins}</td>
+                            <td className={styles.posCol}>{constructor.position}</td>
+                            <td className={styles.nameCol}>{constructor.Constructor.name}</td>
+                            <td className={styles.pointsCol}>{constructor.points}</td>
+                            <td className={styles.winsCol}>{constructor.wins}</td>
                         </tr>
                     ))}
                 </tbody>

@@ -1,5 +1,6 @@
 .table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .tableHeadRow {
@@ -8,4 +9,24 @@
 
 .tableHeadRow > *, .tableBodyRow > * {
     padding: 0.5em;
+}
+
+.tableBodyRow {
+    border-bottom: var(--bottom-border);
+}
+
+.tableBodyRow:last-child {
+    border: none;
+}
+
+.posCol {
+    vertical-align: top;
+}
+.posCol, .pointsCol, .winsCol {
+    text-align: center;
+}
+
+/* Driver Standings Styling */
+.teamInfo {
+    color: var(--faded-text-color);
 }
