@@ -1,0 +1,46 @@
+.homeSection {
+    width: 95%;
+    margin: 0 auto 1.5em auto;
+    max-width: 1000px;
+}
+
+.homeTitle {
+    font-weight: 600;
+    margin-bottom: 0.25em;
+}
+
+.homeSecondaryCards {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.homeButtonContainer {
+    display: flex;
+    gap: 0.6em;
+}
+
+.homeButton {
+    font-size: 1rem;
+    padding: 0.3em 0.6em;
+    border-radius: 15px;
+    transition: 0.3s background-color;
+    border: var(--home-button-border-color);
+}
+
+.homeButton:hover {
+    background-color: var(--button-nav-color-hover);
+}
+
+.homeButton:disabled {
+    background-color: var(--button-nav-color);
+    color: var(--button-nav-text-color);
+    border: none;
+}
+
+@media (min-width: 600px) {
+    .homeSecondaryCards {
+        flex-direction: row;
+    }
+}

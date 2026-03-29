@@ -1,0 +1,50 @@
+/* Styles for the secondary in the hero section */
+.cardContainer {
+    background-color: var(--secondary-bg-color);
+    border-radius: 8px;
+    width: 98%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0.25em 0.5em;
+}
+
+/* LASTRACECARD specific styling */
+.cardInfo {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    margin-bottom: 0.25em;
+}
+
+/* Upcoming Schedule Card */
+.cardUpcomingInfo {
+    margin-bottom: 0.5em;
+}
+
+.cardContainerUpcoming {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.cardMiniContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.25em;
+    border-bottom: var(--bottom-border);
+}
+
+.cardMiniContainer:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.cardUpcomingRound {
+    line-height: 1.2;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+

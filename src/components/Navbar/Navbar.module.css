@@ -1,0 +1,114 @@
+/* -----------
+NAVBAR 
+-------------- */
+.navbar {
+    background-color: var(--button-nav-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.navTitle,
+.hamburgerMenu,
+.closeButton {
+    margin: 0.5em 0.2em;
+}
+
+.navTitleLlink {
+    transition: 0.3s opacity;
+}
+
+.navTitleLink:focus,
+.navTitleLink:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.hamburgerMenu {
+    font-size: 1.3rem;
+}
+
+.navMenu {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1000;
+    background-color: var(--button-nav-color);
+    opacity: 97%;
+    transform: translateY(-100%);
+}
+
+.navMenu.show {
+    transform: translateY(0);
+    z-index: 1000;
+}
+
+.closeButton {
+    font-size: 1.5rem;
+    margin-left: auto;
+    transition: opacity 0.3s;
+}
+
+.closeButton:focus,
+.closeButton:hover {
+    opacity: 70%;
+}
+
+.navItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    gap: 3em;
+}
+
+.navLink {
+    font-size: 1.5rem;
+    color: var(--button-nav-text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s border-bottom;
+}
+
+.navLink:hover,
+.navLink:focus {
+    border-bottom: 4px solid white;
+}
+
+@media (min-width: 600px) {
+    .navbar {
+        align-items: center;
+        padding: 0.5em;
+    }
+
+    .navTitle {
+        margin: 0;
+        width: 25%;
+    }
+
+    .hamburgerMenu,
+    .closeButton {
+        display: none;
+    }
+
+    .navMenu {
+        all: unset;
+        width: 70%;
+        max-width: 600px;
+    }
+
+    .navItems {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 0 0 auto;
+        gap: 1em;
+    }
+
+    .navLink {
+        font-size: 1rem;
+    }
+
+}
