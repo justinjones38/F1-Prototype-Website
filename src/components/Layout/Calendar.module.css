@@ -1,6 +1,6 @@
 .calendarContainer {
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
     max-width: 1200px;
 }
 
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     gap: 1em;
-    border: var(--bottom-border);
+    border: 1px solid var(--gray-border-color);
     border-radius: 8px;
     padding: 0.5em;
     line-height: 1.4;
@@ -70,8 +70,8 @@
 }
 
 .progressInfo.completed {
-    background-color: var(--black-bg-color);
-    color: var(--green-text-color);
+    background-color: var(--lime-green-bg-color);
+    color: var(--dark-green-text-color);
 }
 
 .progressInfo.next {

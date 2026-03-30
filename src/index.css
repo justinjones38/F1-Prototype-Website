@@ -16,7 +16,7 @@ CSS VARIABLES
   --bg-color: #f2f2f0;
   --secondary-bg-color: #D5D7D7;
   --faded-bg-color: rgb(242, 242, 240, 40%);
-  --lime-green-bg-color: #f0fceb;
+  --lime-green-bg-color: #D1EFC8;
   --black-bg-color: #000000;
 
   /* Text colors */
@@ -28,6 +28,7 @@ CSS VARIABLES
   --btn-disabled-color: #808080;
   --secondary-text-color: rgba(0, 0, 0, 80%);
   --green-text-color: #0bff55;
+  --dark-green-text-color: #003D01;
 
   /* Stylings */
   --bottom-border: 1px solid rgba(4, 4, 4, 0.137);

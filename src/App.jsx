@@ -2,6 +2,7 @@ import './App.module.css'
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Layout/Home';
 import Calendar from './components/Layout/Calendar';
+import Standings from './components/Layout/Standings';
 import { useEffect, useState } from 'react'
 
 export default function App() {
@@ -84,9 +85,14 @@ export default function App() {
           results={data.results}
         />
 
-        <Calendar 
+        <Calendar
           calendar={data.calendar}
           results={data.results}
+        />
+
+        <Standings
+          driverStandings={data.driverStandings}
+          constructorStandings={data.constructorStandings}
         />
 
       </main>
