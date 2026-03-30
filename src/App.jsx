@@ -1,6 +1,7 @@
 import './App.module.css'
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Layout/Home';
+import Calendar from './components/Layout/Calendar';
 import { useEffect, useState } from 'react'
 
 export default function App() {
@@ -75,13 +76,19 @@ export default function App() {
       <header>
         <Navbar windowWidth={windowWidth} />
       </header>
-      <main>
+      <main id='home'>
         <Home
           calendar={data.calendar}
           driverStandings={data.driverStandings}
           constructorStandings={data.constructorStandings}
           results={data.results}
         />
+
+        <Calendar 
+          calendar={data.calendar}
+          results={data.results}
+        />
+
       </main>
 
 
