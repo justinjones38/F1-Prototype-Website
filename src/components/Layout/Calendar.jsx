@@ -33,7 +33,7 @@ export default function Calendar({ calendar, results }) {
     console.log(mappedCalendar);
     return (
         <div className={styles.calendarContainer}>
-            <h2 className={styles.title}>{calendar.season} Season Calendar </h2>
+            <h2 className={styles.title}>Race Calendar </h2>
             <div className={styles.cards}>
                 {mappedCalendar.map((event, index) => (
                     <div className={`${styles.cardContainer} ${styles[event.styling]}`} key={event.round}>
