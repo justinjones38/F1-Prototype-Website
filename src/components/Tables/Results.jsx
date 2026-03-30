@@ -1,7 +1,6 @@
 import styles from "./Results.module.css"
 
 export default function RaceResults({ podiumResults }) {
-    console.log(podiumResults);
     return (
         <table className={styles.table}>
             <thead className={styles.tableHead}>

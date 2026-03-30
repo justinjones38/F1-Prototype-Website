@@ -1,0 +1,91 @@
+.calendarContainer {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.title {
+    margin-bottom: 0.5em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    border: var(--bottom-border);
+    border-radius: 8px;
+    padding: 0.5em;
+    line-height: 1.4;
+}
+
+.cardContainer.completed {
+    border-left: 6px solid var(--green-border-color);
+}
+
+.cardContainer.next {
+    border-left: 6px solid var(--button-nav-color);
+}
+
+.cardContainer.upcoming {
+    border-left: 6px solid var(--gray-border-color);
+}
+
+.raceInfo {
+    color: var( --faded-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1em;
+}
+
+.raceName {
+    font-weight: 700;
+}
+
+.trackName {
+    font-size: 0.9rem;
+    margin-bottom: 1em;
+}
+
+.driverInfo {
+    font-weight: 600;
+}
+
+.cardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.progressInfo {
+    padding: 0.25em 0.5em;
+    border: 1px solid black;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.progressInfo.completed {
+    background-color: var(--black-bg-color);
+    color: var(--green-text-color);
+}
+
+.progressInfo.next {
+    background-color: var(--button-nav-color);
+    color: var(--button-nav-text-color);
+}
+
+.progressInfo.upcoming {
+    background-color: var(--black-bg-color);
+    color: var(--button-nav-text-color);
+}
+
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    }
+}
