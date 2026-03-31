@@ -2,7 +2,6 @@ import { convertDate } from "../../utils/helper";
 import styles from "./Calendar.module.css";
 
 export default function Calendar({ calendar, results }) {
-    console.log(calendar, results);
 
     const lastRound = results.Races.length + 1;
     const mappedCalendar = calendar.Races.map(event => {
@@ -30,7 +29,6 @@ export default function Calendar({ calendar, results }) {
         }
     })
 
-    console.log(mappedCalendar);
     return (
         <div className={styles.calendarContainer}>
             <h2 className={styles.title}>Race Calendar </h2>
