@@ -23,17 +23,17 @@ export default function Navbar({windowWidth}) {
         link: "#schedule"
     }, {
         id: 1,
+        name: "Results",
+        link: "#results"
+    }, {
+        id: 2,
         name: "Standings",
         link: "#standings"
     }, {
-        id: 2,
+        id: 3,
         name: "Drivers",
         link: "#drivers"
-    }, {
-        id: 3,
-        name: "Teams",
-        link: "#teams"
-    }]
+    }, ]
 
 
 
