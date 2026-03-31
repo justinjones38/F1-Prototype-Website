@@ -5,7 +5,6 @@ export default function Drivers(props) {
 
     // Used to get access to constructor of each driver
     const driverStandings = props.driverStandings.StandingsLists[0].DriverStandings;
-    console.log(props);
     const driversInfo = drivers.map(driver => {
         const findDriverInfo = driverStandings.find(item => item.Driver.permanentNumber === driver.permanentNumber);
         return {
