@@ -5,7 +5,7 @@ export default function Drivers(props) {
 
     // Used to get access to constructor of each driver
     const driverStandings = props.driverStandings.StandingsLists[0].DriverStandings;
-    console.log(driverStandings);
+    console.log(props);
     const driversInfo = drivers.map(driver => {
         const findDriverInfo = driverStandings.find(item => item.Driver.permanentNumber === driver.permanentNumber);
         return {
@@ -16,16 +16,22 @@ export default function Drivers(props) {
 
     return (
         <div className={styles.driverContainer}>
+            <h2 className={styles.title}>Drivers - {props.drivers.season} Season</h2>
             <div className={styles.cards}>
-                <h2 className={styles.title}>Drivers</h2>
                 {driversInfo.map(driver => (
                     <div className={styles.driverCard} key={driver.permanentNumber}>
-                        <p className={styles.drivingNumber}> {driver.permanentNumber}</p>
-                        <h3 className={styles.driver}>{driver.givenName} {driver.familyName}</h3>
+                        <h3 className={styles.drivingNumber}>{driver.permanentNumber}</h3>
+                        <p className={styles.driver}>{driver.givenName} {driver.familyName}</p>
                         <p className={styles.constructors}>{driver.Constructors[0].name}</p>
-                        <div className={styles.personalInfo}>
-                            <p className={styles.nationality}>{driver.nationality}</p>
-                            <p className={styles.dateOfBirth}>{driver.dateOfBirth}</p>
+                        <div className={styles.personalInfoContainer}>
+                            <div className={styles.personalInfo}>
+                                <p className={styles.personalInfoDescription}>Nationality</p>
+                                <p className={styles.ersonalInfoValue}>{driver.nationality}</p>
+                            </div>
+                            <div className={styles.personalInfo}>
+                                <p className={styles.personalInfoDescription}>Date of Birth</p>
+                                <p className={styles.dateOfBirth}>{driver.dateOfBirth}</p>
+                            </div>
                         </div>
                     </div>
                 ))}

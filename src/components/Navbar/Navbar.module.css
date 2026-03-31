@@ -2,7 +2,7 @@
 NAVBAR 
 -------------- */
 .navbar {
-    background-color: var(--button-nav-color);
+    background-color: var(--button-nav-bg-color);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@ NAVBAR
     width: 100%;
     min-height: 100vh;
     z-index: 1000;
-    background-color: var(--button-nav-color);
+    background-color: var(--button-nav-bg-color);
     opacity: 97%;
     transform: translateY(-100%);
 }
