@@ -2,59 +2,70 @@ import { convertDate } from "../../utils/helper";
 import styles from "./Calendar.module.css";
 
 export default function Calendar({ calendar, results }) {
+  const lastRound = results.Races.length + 1;
+  const mappedCalendar = calendar.Races.map((event) => {
+    if (parseInt(event.round) < lastRound) {
+      return {
+        ...event,
+        completed: true,
+        progress: "Completed",
+        styling: "completed",
+      };
+    } else if (parseInt(event.round) === lastRound) {
+      return {
+        ...event,
+        completed: false,
+        progress: "Next",
+        styling: "next",
+      };
+    } else {
+      return {
+        ...event,
+        completed: false,
+        progress: "Upcoming",
+        styling: "upcoming",
+      };
+    }
+  });
 
-    const lastRound = results.Races.length + 1;
-    const mappedCalendar = calendar.Races.map(event => {
-        if (parseInt(event.round) < lastRound) {
-            return {
-                ...event,
-                completed: true,
-                progress: "Completed",
-                styling: "completed"
-            }
-        } else if (parseInt(event.round) === lastRound) {
-            return {
-                ...event,
-                completed: false,
-                progress: "Next",
-                styling: "next"
-            }
-        } else {
-            return {
-                ...event,
-                completed: false,
-                progress: "Upcoming",
-                styling: "upcoming"
-            }
-        }
-    })
-
-    return (
-        <div className={styles.calendarContainer}>
-            <h2 className={styles.title}>Race Calendar </h2>
-            <div className={styles.cards}>
-                {mappedCalendar.map((event, index) => (
-                    <div className={`${styles.cardContainer} ${styles[event.styling]}`} key={event.round}>
-                        <div className={styles.cardLeft}>
-                            <p className={styles.raceInfo}>Round {event.round}</p>
-                            <p className={styles.raceName}>{event.raceName}</p>
-                            <p className={styles.trackName}>{event.Circuit.circuitName}</p>
-                            {!event.completed ? <p className={styles.date}>{convertDate(event.date, event.time)}</p> : null}
-                            {event.completed ?
-                                <p className={styles.driverInfo}>{results.Races[index].Results[0].Driver.givenName} {results.Races[index].Results[0].Driver.familyName}</p>
-                                : null}
-                        </div>
-                        <div className={styles.cardRight}>
-                            <p className={`${styles.progressInfo} ${styles[event.styling]}`}>
-                                {event.progress}
-                            </p>
-                            {event.completed ? <p className={styles.date}>{convertDate(event.date, event.time)}</p> : null}
-                        </div>
-                    </div>
-
-                ))}
+  return (
+    <div className={styles.calendarContainer}>
+      <h2 className={styles.title}>Race Calendar </h2>
+      <div className={styles.cards}>
+        {mappedCalendar.map((event, index) => (
+          <div
+            className={`${styles.cardContainer} ${styles[event.styling]}`}
+            key={event.round}
+          >
+            <div className={styles.cardLeft}>
+              <p className={styles.raceInfo}>Round {event.round}</p>
+              <p className={styles.raceName}>{event.raceName}</p>
+              <p className={styles.trackName}>{event.Circuit.circuitName}</p>
+              {!event.completed ? (
+                <p className={styles.date}>
+                  {convertDate(event.date, event.time)}
+                </p>
+              ) : null}
+              {event.completed ? (
+                <p className={styles.driverInfo}>
+                  {results.Races[index].Results[0].Driver.givenName}{" "}
+                  {results.Races[index].Results[0].Driver.familyName}
+                </p>
+              ) : null}
             </div>
-        </div>
-
-    )
+            <div className={styles.cardRight}>
+              <p className={`${styles.progressInfo} ${styles[event.styling]}`}>
+                {event.progress}
+              </p>
+              {event.completed ? (
+                <p className={styles.date}>
+                  {convertDate(event.date, event.time)}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

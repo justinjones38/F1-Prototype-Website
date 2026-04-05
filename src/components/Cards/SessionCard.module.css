@@ -1,38 +1,38 @@
 .cardContainer {
-    display: flex;
-    gap: 0.5em;
-    border-bottom: var(--bottom-border);
-    padding-bottom: 0.25em;
-    margin-bottom: 0.25em;
+  display: flex;
+  gap: 0.5em;
+  border-bottom: var(--bottom-border);
+  padding-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 .cardContainer:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .cardDay {
-    display: none;
+  display: none;
 }
 
 .cardDate {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .cardDay::after,
 .cardDate::after {
-    display: inline;
-    content: " - "
+  display: inline;
+  content: " - ";
 }
 
 @media (min-width: 500px) {
-    .cardDay {
-        display: block;
-        margin-left: auto;
-    }
+  .cardDay {
+    display: block;
+    margin-left: auto;
+  }
 
-    .cardDate {
-        margin-left: initial;
-    }
+  .cardDate {
+    margin-left: initial;
+  }
 }
