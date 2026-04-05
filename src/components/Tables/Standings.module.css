@@ -1,31 +1,33 @@
 .table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .tableHeadRow {
-    text-align: left;
+  text-align: left;
 }
 
-.tableHeadRow > *, .tableBodyRow > * {
-    padding: 0.25em 0.5em;
+.tableHeadRow > *,
+.tableBodyRow > * {
+  padding: 0.25em 0.5em;
 }
 
 .tableBodyRow {
-    border-bottom: var(--bottom-border);
+  border-bottom: var(--bottom-border);
 }
 
 .tableBodyRow:last-child {
-    border: none;
+  border: none;
 }
 
-
-.posCol, .pointsCol, .winsCol {
-    text-align: center;
-    vertical-align: top;
+.posCol,
+.pointsCol,
+.winsCol {
+  text-align: center;
+  vertical-align: top;
 }
 
 /* Driver Standings Styling */
 .teamInfo {
-    color: var(--faded-text-color);
+  color: var(--faded-text-color);
 }

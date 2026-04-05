@@ -1,43 +1,45 @@
 .table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
-
 
 .table th,
 .table td {
-    padding: 0.25em;
+  padding: 0.25em;
 }
 
 .tableBodyRow {
-    border-bottom: var(--bottom-border);
+  border-bottom: var(--bottom-border);
 }
 
-.tableBodyRow:last-child{
-    border: none;
+.tableBodyRow:last-child {
+  border: none;
 }
 
-
-th.posCol, .posCol {
-    text-align: center;
+th.posCol,
+.posCol {
+  text-align: center;
 }
 
-.posCol, .gapCol {
-    vertical-align: text-top;
+.posCol,
+.gapCol {
+  vertical-align: text-top;
 }
 
-th.driverCol, .driverCol {
-    text-align: left;
+th.driverCol,
+.driverCol {
+  text-align: left;
 }
 
 .driverInfo {
-    line-height: 1.6;
+  line-height: 1.6;
 }
 
 .teamInfo {
-    color: var(--faded-text-color);
+  color: var(--faded-text-color);
 }
 
-th.gapCol, .gapCol {
-    text-align: right;
+th.gapCol,
+.gapCol {
+  text-align: right;
 }

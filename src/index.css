@@ -7,29 +7,28 @@ CSS RESET
   box-sizing: border-box;
 }
 
-
 /* =========================================
 CSS VARIABLES
 ============================================*/
 :root {
   /* Background colors */
   --bg-color: #f2f2f0;
-  --secondary-bg-color: #D5D7D7;
+  --secondary-bg-color: #d5d7d7;
   --faded-bg-color: rgb(242, 242, 240, 40%);
-  --lime-green-bg-color: #D1EFC8;
+  --lime-green-bg-color: #d1efc8;
   --black-bg-color: #000000;
-  --button-nav-bg-color: #DC0000;
+  --button-nav-bg-color: #dc0000;
 
   /* Text colors */
   --text-primary-color: #000000;
   --faded-text-color: rgba(0, 0, 0, 0.75);
-  --button-nav-color: #DC0000;
+  --button-nav-color: #dc0000;
   --button-nav-color-hover: #eec2c2;
   --button-nav-text-color: #ffffff;
   --btn-disabled-color: #808080;
   --secondary-text-color: rgba(0, 0, 0, 80%);
   --green-text-color: #0bff55;
-  --dark-green-text-color: #003D01;
+  --dark-green-text-color: #003d01;
 
   /* Stylings */
   --bottom-border: 1px solid rgba(4, 4, 4, 0.137);
@@ -37,7 +36,6 @@ CSS VARIABLES
   --green-border-color: #0bff55;
   --gray-border-color: #808080;
 }
-
 
 /* =========================================
 BASE STYLES
@@ -51,10 +49,11 @@ body {
   font-size: 1rem;
   font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
   background-color: var(--bg-color);
-  color: var(--text-primary-color)
+  color: var(--text-primary-color);
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
